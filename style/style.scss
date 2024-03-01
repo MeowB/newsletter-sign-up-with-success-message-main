@@ -1,0 +1,229 @@
+//  FONT
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// COLORS
+// primary
+$c-Tomato: hsl(4, 100%, 67%);
+
+// neutral
+$c-Dark-Slate-Grey: hsl(234, 29%, 20%);
+$c-Charcoal-Grey: hsl(235, 18%, 26%);
+$c-Grey: hsl(231, 7%, 60%);
+$c-White: hsl(0, 0%, 100%);
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Roboto, sans-serif;
+	width: 100%;
+	min-height: 100vh;
+	color: $c-Charcoal-Grey;
+	font-size: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	main {
+		position: relative;
+		.main-content {
+			width: 100%;
+		}
+		.content {
+			width: 90%;
+			max-width: 375px;
+			margin: auto;
+
+			h1 {
+				padding-top: 25px;
+				font-size: 2.5em;
+			}
+
+			p {
+				padding-top: 25px;
+			}
+
+			ul {
+				margin-top: 25px;
+				list-style: none;
+
+				li {
+					position: relative;
+					margin-left: 40px;
+					padding-top: 25px;
+
+					img {
+						position: absolute;
+						left: -40px;
+					}
+				}
+			}
+
+			form {
+				padding-top: 50px;
+				position: relative;
+
+				label {
+					font-weight: 700;
+					color: $c-Charcoal-Grey;
+				}
+
+				input{
+					margin: 10px 0;
+					padding: 20px 15px;
+					border-radius: 5px;
+					box-sizing: border-box;
+					width: 100%;
+				}
+
+				input[type=email] {
+					border: 1px solid $c-Grey;
+				}
+
+				input[type=submit] {
+					font-weight: bold;
+					border: none;
+					color: $c-White;
+					background-color: $c-Dark-Slate-Grey;
+					cursor: pointer;
+				}
+
+				
+				input[type=submit]:hover {
+					background: linear-gradient(to right, #ff3e83, $c-Tomato);
+					box-shadow: 5px 5px 20px $c-Tomato;
+				}
+
+				.error {
+					position: absolute;
+					color: $c-Tomato;
+					top: 50px;
+					right: 0;
+				}
+			}
+
+		}
+
+		.success-message {
+			display: none;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+
+			.success-content {
+				background-color: white;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				.text {
+					margin-top: 50%;
+
+					img {
+						padding: 25px;
+					}
+
+					h2 {
+						padding: 25px;
+						font-size: 3em;
+					}
+
+					p {
+						padding: 0 25px;
+
+						span {
+							font-weight: bold;
+						}
+					}
+				}
+
+				button {
+					padding: 20px;
+					border: none;
+					border-radius: 10px;
+					background-color: $c-Dark-Slate-Grey;
+					color: white;
+					font-weight: bold;
+					cursor: pointer;
+				}
+				
+				button:hover {
+					background: linear-gradient(to right, #ff3e83, $c-Tomato);
+					box-shadow: 5px 5px 20px $c-Tomato;
+				}
+			}
+		}
+		
+	}
+
+	footer {
+		margin-top: auto;
+	}
+}
+
+
+
+@media only screen and(min-width: 800px) {
+	body {
+		background-color: $c-Charcoal-Grey;
+
+		main {
+			flex-grow: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.main-content {
+				background-color: $c-White;
+				max-height: 600px;
+				display: flex;
+				flex-direction: row;
+				padding: 25px;
+				border-radius: 15px;
+	
+				.content {
+					padding: 25px;
+					order: 1;
+	
+					h1 {
+						padding-top: 0;
+					}
+				}
+	
+				#illustration {
+					order: 2;
+					content: url(../assets/images/illustration-sign-up-desktop.svg);
+				}
+			}
+
+			.success-message {
+				display: none;
+				justify-content: center;
+				align-items: center;
+				background-color: $c-Charcoal-Grey;
+				.success-content {
+					border-radius: 15px;
+					width: 400px;
+					height: 550px;
+
+					.text {
+						margin: 25px;
+					}
+
+					button {
+						margin: 25px;
+						margin-bottom: 50px;
+					}
+
+					button:hover {
+						background: linear-gradient(to right, #ff3e83, $c-Tomato);
+						box-shadow: 5px 5px 20px $c-Tomato;
+					}
+				}
+			}
+		}
+	}
+}
